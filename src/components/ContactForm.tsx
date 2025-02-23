@@ -8,7 +8,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { createClient } from '@supabase/supabase-js';
+
+// Initialize Supabase client
+const supabase = createClient(
+  'https://xyzcompanyid.supabase.co',  // Replace with your Supabase URL
+  'your-anon-key'  // Replace with your anon key
+);
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "נדרש שם מלא" }),
@@ -22,7 +28,6 @@ type FormValues = z.infer<typeof formSchema>;
 
 const ContactForm = () => {
   const { toast } = useToast();
-  const supabase = createClientComponentClient();
   
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
