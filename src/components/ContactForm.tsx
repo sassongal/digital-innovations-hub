@@ -55,6 +55,7 @@ const ContactForm = () => {
 
       form.reset();
     } catch (error) {
+      console.error('Error submitting form:', error);
       toast({
         variant: "destructive",
         title: "שגיאה בשליחת הטופס",
