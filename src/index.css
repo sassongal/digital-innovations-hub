@@ -1,0 +1,52 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 223 26% 13%;
+    --foreground: 0 0% 100%;
+    --card: 223 26% 13%;
+    --card-foreground: 0 0% 100%;
+    --border: 215 27% 30%;
+    --input: 215 27% 30%;
+    --ring: 263 85% 74%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    direction: rtl;
+    font-family: 'Heebo', sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(145deg, #1A1F2C 0%, #2A2F3C 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg;
+  }
+  
+  .hero-gradient {
+    @apply bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .button-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity duration-300;
+  }
+}
