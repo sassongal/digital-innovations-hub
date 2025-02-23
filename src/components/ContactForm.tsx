@@ -12,8 +12,8 @@ import { createClient } from '@supabase/supabase-js';
 
 // Initialize Supabase client
 const supabase = createClient(
-  'https://xyzcompanyid.supabase.co',  // Replace with your Supabase URL
-  'your-anon-key'  // Replace with your anon key
+  'https://lknydwpltwctvlzzjgwt.supabase.co',  // Your Supabase project URL
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxrbnlkd3BsdHdjdHZsenpqZ3d0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc4NjY5MjQsImV4cCI6MjAyMzQ0MjkyNH0.L1UJ7e5jtZSWNTE7gMGInmicPh0HgC3qzTeRWo4wJr4'  // Your public anon key
 );
 
 const formSchema = z.object({
